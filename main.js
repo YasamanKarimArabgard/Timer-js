@@ -16,27 +16,32 @@ const timercycle = () => {
 
         second = second + 1;
 
-        if(second==60){
+        if(second == 60){
             minute = minute + 1;
             second = 0;
         }
-        if(minute==60){
+
+        if(minute == 60){
             hour = hour + 1;
             minute = 0;
+            second = 0;
         }
-        if( second<10 || second==0){
+
+        if( second < 10 || second == 0){
         second = "0" + second;
         }
-        if( minute<10 || minute==0){
+
+        if( minute < 10 || minute == 0){
             minute= "0" + minute;
         }
-        if( hour<10 || hour==0){
+
+        if( hour < 10 || hour == 0){
             hour = "0" + hour;
         }
 
-        timer.innerHTML = hour + ':' + minute + ':' + second;
+        timer.innerHTML = hour + ":" + minute + ":" + second;
 
-        setTimeout(timercycle(),1000);
+        setTimeout("timercycle()" ,1000);
     }
 }
 
